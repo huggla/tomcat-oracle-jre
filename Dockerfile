@@ -6,11 +6,6 @@ MAINTAINER Anastas Dancha <anapsix@random.io>
 # and Victor Palma <palma.victor@gmail.com> aka @devx for pointing it out
 
 # Java Version and other ENV
-ENV REV_LINUX_USER="tomcat" \
-    
-
-  TOMCAT_MAJOR="9" \
-    TOMCAT_VERSION="9.0.7" \
 ENV JAVA_VERSION_MAJOR=8 \
     JAVA_VERSION_MINOR=172 \
     JAVA_VERSION_BUILD=11 \
@@ -22,7 +17,7 @@ ENV JAVA_VERSION_MAJOR=8 \
     GLIBC_VERSION=2.27-r0 \
     LANG=C.UTF-8 \
     ENV TOMCAT_MAJOR=9 \
-    TOMCAT_VERSION=8.5.3 \
+    TOMCAT_VERSION=9.0.7 \
     TOMCAT_HOME=/usr/local/tomcat \
     CATALINA_HOME=/usr/local/tomcat \
     CATALINA_OUT=/dev/null
@@ -92,3 +87,6 @@ RUN set -ex && \
 
 # EOF
 COPY --from tomcat /usr/local/tomcat /usr/local/tomcat
+
+ENV REV_LINUX_USER="tomcat" \
+    REV_param_JAVA_HOME="$JAVA_HOME"
