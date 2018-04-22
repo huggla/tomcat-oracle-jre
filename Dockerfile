@@ -86,7 +86,7 @@ RUN set -ex && \
     echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf
 
 # EOF
-COPY --from tomcat /usr/local/tomcat /usr/local/tomcat
+COPY --from=tomcat /usr/local/tomcat /usr/local/tomcat
 
 ENV REV_LINUX_USER="tomcat" \
     REV_param_JAVA_HOME="$JAVA_HOME"
