@@ -15,7 +15,12 @@ ENV JAVA_VERSION_MAJOR=8 \
     PATH=${PATH}:/opt/jdk/bin \
     GLIBC_REPO=https://github.com/sgerrand/alpine-pkg-glibc \
     GLIBC_VERSION=2.27-r0 \
-    LANG=C.UTF-8
+    LANG=C.UTF-8 \
+    ENV TOMCAT_MAJOR=9 \
+    TOMCAT_VERSION=8.5.3 \
+    TOMCAT_HOME=/usr/local/tomcat \
+    CATALINA_HOME=/usr/local/tomcat \
+    CATALINA_OUT=/dev/null
 
 # do all in one step
 RUN set -ex && \
