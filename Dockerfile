@@ -6,6 +6,11 @@ MAINTAINER Anastas Dancha <anapsix@random.io>
 # and Victor Palma <palma.victor@gmail.com> aka @devx for pointing it out
 
 # Java Version and other ENV
+ENV REV_LINUX_USER="tomcat" \
+    
+
+  TOMCAT_MAJOR="9" \
+    TOMCAT_VERSION="9.0.7" \
 ENV JAVA_VERSION_MAJOR=8 \
     JAVA_VERSION_MINOR=172 \
     JAVA_VERSION_BUILD=11 \
@@ -21,6 +26,8 @@ ENV JAVA_VERSION_MAJOR=8 \
     TOMCAT_HOME=/usr/local/tomcat \
     CATALINA_HOME=/usr/local/tomcat \
     CATALINA_OUT=/dev/null
+ENV TOMCAT_NATIVE_LIBDIR="$CATALENV TOMCAT_NATIVE_LIBDIR="$CATALINA_HOME/native-jni-lib"
+ENV LD_LIBRARY_PATH="$TOMCAT_NATIVE_LIBDIR"
 
 # do all in one step
 RUN set -ex && \
